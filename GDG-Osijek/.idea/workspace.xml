@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="298bd31c-55c3-4a66-9f50-a5175ed1679b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lectures/Lectures1/Homework1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GDG-Osijek.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GDG-Osijek.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lectures1/HomeWork2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lectures/Lectures1/Homework1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Lectures/Lectures1/HomeWork1.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +26,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Kotlin.HomeWork1Kt.executor": "Run",
     "Kotlin.Homework1Kt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
