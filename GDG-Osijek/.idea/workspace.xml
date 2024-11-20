@@ -5,13 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="298bd31c-55c3-4a66-9f50-a5175ed1679b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lectures/Lectures1/HomeWork2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lectures/Lectures1/Homework1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Lectures/Lectures1/HomeWork1.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork3.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork4.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork5.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork6.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork7.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -20,6 +31,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2p2iaEKfqVFF2aThnl0xNUkI4HC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,6 +41,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Kotlin.HomeWork1Kt.executor": "Run",
+    "Kotlin.HomeWork2Kt.executor": "Run",
+    "Kotlin.HomeWork3Kt.executor": "Run",
+    "Kotlin.HomeWork4Kt.executor": "Run",
     "Kotlin.Homework1Kt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
