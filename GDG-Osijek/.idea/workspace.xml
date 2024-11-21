@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="298bd31c-55c3-4a66-9f50-a5175ed1679b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork3.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork4.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork5.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork6.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork7.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork10.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork8.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lectures/Lecture1/Homework9.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Lectures/Lecture1/HomeWork5.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,26 +37,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Kotlin.HomeWork1Kt.executor": "Run",
-    "Kotlin.HomeWork2Kt.executor": "Run",
-    "Kotlin.HomeWork3Kt.executor": "Run",
-    "Kotlin.HomeWork4Kt.executor": "Run",
-    "Kotlin.Homework1Kt.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luka/Documents/GitHub/GDG-Osijek/GDG-Osijek/Lectures/Lectures1",
-    "onboarding.tips.debug.path": "C:/Users/Luka/Documents/GitHub/GDG-Osijek/GDG-Osijek/Homework/src/Main.kt",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Kotlin.HomeWork1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HomeWork2Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HomeWork3Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HomeWork4Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HomeWork5Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HomeWork7Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Homework1Kt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luka/Documents/GitHub/GDG-Osijek/GDG-Osijek/Lectures/Lectures1&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Luka/Documents/GitHub/GDG-Osijek/GDG-Osijek/Homework/src/Main.kt&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Luka\Documents\GitHub\GDG-Osijek\GDG-Osijek\Lectures\Lectures1" />

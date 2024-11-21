@@ -1,3 +1,5 @@
+import kotlin.math.absoluteValue
+
 fun main() {
     print("Enter the lower bound of the range: ")
     val lowerBound = readLine()?.toIntOrNull()
