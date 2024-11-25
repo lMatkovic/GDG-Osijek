@@ -1,132 +1,153 @@
+import kotlin.random.Random
+
 enum class Illness(val description: String) {
     FLU("Common flu with symptoms like fever, cough"),
     COVID("Severe respiratory illness caused by the virus SARS-CoV-2"),
     COLD("Mild respiratory illness with runny nose and sore throat")
 }
 
+abstract class Person(val name: String) {
+    abstract fun introduce(): String
+}
+
+interface Staff {
+    val salary: Double
+    fun work(): String
+}
+
 class Department(private val departmentName: String, val responsibility: String) {
-    var numberOfStaff: Int = 0
-        private set
-
-    fun hireStaff(count: Int) {
-        numberOfStaff += count
-        println("$count staff hired in $departmentName department.")
-    }
-
-    fun showDepartmentInfo() {
-        println("Department: $departmentName\nResponsibility: $responsibility\nNumber of Staff: $numberOfStaff")
-    }
-}
-
-open class Worker(val name: String, val salary: Double) {
-    lateinit var department: Department
-        private set
-
-    var isAvailable: Boolean = true
-        get() = field
-        set(value) {
-            if (value) println("$name is now available.")
-            else println("$name is now unavailable.")
-            field = value
-        }
-
-    fun assignToDepartment(department: Department) {
-        this.department = department
-        println("$name has been assigned to the ${department.departmentName} department.")
-    }
-
-    open fun work(): String {
-        return "$name is working."
-    }
-}
-
-class Patient(val patientName: String, var illness: Illness) {
-    var isTreated: Boolean = false
-        private set
-
-    constructor(patientName: String) : this(patientName, Illness.COLD)
-
-    fun receiveTreatment(worker: Worker): Boolean {
-        println("$patientName is being treated by ${worker.name} for ${illness.description}.")
-        if (worker.isAvailable) {
-            isTreated = true
-            println("$patientName is successfully treated for ${illness.description}.")
-        } else {
-            println("${worker.name} is not available to treat $patientName.")
-        }
-        return isTreated
-    }
-}
-
-class Hospital {
-    companion object {
-        val hospitalName: String = "City Medical Center"
-        var patientCount: Int = 0
-
-        fun addPatient(patient: Patient) {
-            patientCount++
-            println("${patient.patientName} has been added to the hospital. Total patients: $patientCount")
-        }
-    }
-
-    val departments: MutableList<Department> = mutableListOf()
-    val workers: MutableList<Worker> = mutableListOf()
-
-    fun addDepartment(department: Department) {
-        departments.add(department)
-    }
+    private val workers: MutableList<Worker> = mutableListOf()
 
     fun addWorker(worker: Worker) {
         workers.add(worker)
     }
 
-    fun treatPatient(patient: Patient, worker: Worker) {
-        if (worker is Doctor) {
-            val treatmentResult = patient.receiveTreatment(worker)
-            println("Treatment Result: ${if (treatmentResult) "Successful" else "Failed"}")
-        } else {
-            println("Only doctors can treat patients.")
-        }
+    fun getWorkers(): List<Worker> = workers
+
+    fun totalSalaries(): Double {
+        return workers.sumOf { it.salary }
+    }
+
+    fun showWorkers() {
+        println("Workers in $departmentName:")
+        workers.forEach { println(it.introduce()) }
     }
 }
 
-class Doctor(name: String, salary: Double) : Worker(name, salary) {
+open class Worker(name: String, override val salary: Double) : Person(name), Staff {
+    lateinit var department: Department
+
+    override fun introduce(): String {
+        return "Hi, I am $name, a worker earning $$salary."
+    }
+
     override fun work(): String {
-        return "$name is diagnosing patients."
+        return "$name is working in ${department.responsibility}."
+    }
+}
+
+class Doctor(name: String, salary: Double, val specialization: String) : Worker(name, salary) {
+    override fun work(): String {
+        return "$name is treating patients as a $specialization."
     }
 }
 
 class Nurse(name: String, salary: Double) : Worker(name, salary) {
     override fun work(): String {
-        return "$name is assisting in patient care."
+        return "$name is assisting doctors and taking care of patients."
+    }
+}
+
+class Patient(name: String, var illness: Illness) : Person(name) {
+    var isTreated: Boolean = false
+        private set
+
+    fun receiveTreatment(worker: Worker): Boolean {
+        println("$name is being treated for ${illness.description} by ${worker.name}.")
+        isTreated = Random.nextBoolean()
+        println(if (isTreated) "$name has recovered." else "$name's treatment was unsuccessful.")
+        return isTreated
+    }
+
+    override fun introduce(): String {
+        return "Hello, my name is $name, and I am a patient with ${illness.description}."
+    }
+}
+
+class Hospital {
+    private val departments = mutableListOf<Department>()
+    private val patients = mutableListOf<Patient>()
+
+    fun addDepartment(department: Department) {
+        departments.add(department)
+    }
+
+    fun admitPatient(patient: Patient) {
+        patients.add(patient)
+        println("${patient.name} has been admitted to the hospital.")
+    }
+
+    fun getAllStaff(): List<Worker> {
+        return departments.flatMap { it.getWorkers() }
+    }
+
+    fun calculateTotalSalaries(): Double {
+        return departments.sumOf { it.totalSalaries() }
+    }
+
+    fun treatAllPatients() {
+        patients.forEach { patient ->
+            val doctor = getAllStaff().filterIsInstance<Doctor>().randomOrNull()
+            if (doctor != null) patient.receiveTreatment(doctor)
+            else println("No doctor available to treat ${patient.name}.")
+        }
     }
 }
 
 fun main() {
     val hospital = Hospital()
 
-    val emergencyDepartment = Department("Emergency", "Provide immediate medical assistance")
-    val generalMedicineDepartment = Department("General Medicine", "Provide overall health care")
+    val emergencyDepartment = Department("Emergency", "Provide immediate care")
+    val generalMedicine = Department("General Medicine", "Overall health care")
 
-    val doctorJohn = Doctor("Dr. John", 7000.0)
-    val nurseAlice = Nurse("Nurse Alice", 3000.0)
+    val doctor1 = Doctor("Dr. John", 7000.0, "Cardiology")
+    val doctor2 = Doctor("Dr. Jane", 8000.0, "Pediatrics")
+    val nurse1 = Nurse("Nurse Alice", 3000.0)
+    val nurse2 = Nurse("Nurse Bob", 3200.0)
+
+    emergencyDepartment.addWorker(doctor1)
+    emergencyDepartment.addWorker(nurse1)
+    generalMedicine.addWorker(doctor2)
+    generalMedicine.addWorker(nurse2)
 
     hospital.addDepartment(emergencyDepartment)
-    hospital.addDepartment(generalMedicineDepartment)
-    hospital.addWorker(doctorJohn)
-    hospital.addWorker(nurseAlice)
-
-    emergencyDepartment.hireStaff(3)
-    generalMedicineDepartment.hireStaff(2)
+    hospital.addDepartment(generalMedicine)
 
     val patient1 = Patient("Alice", Illness.FLU)
     val patient2 = Patient("Bob", Illness.COVID)
+    val patient3 = Patient("Charlie", Illness.COLD)
 
-    Hospital.addPatient(patient1)
-    Hospital.addPatient(patient2)
+    hospital.admitPatient(patient1)
+    hospital.admitPatient(patient2)
+    hospital.admitPatient(patient3)
 
-    doctorJohn.assignToDepartment(emergencyDepartment)
-    hospital.treatPatient(patient1, doctorJohn)
+    println("Hospital Staff:")
+    hospital.getAllStaff().forEach { println(it.introduce()) }
 
-    hospital.treatPatient(patient2, nurseAlice)
+    println("\nTreating all patients:")
+    hospital.treatAllPatients()
+
+    println("\nDepartment Salaries:")
+    hospital.calculateTotalSalaries().let { println("Total salaries across all departments: $$it") }
+
+    println("\nFiltering and Sorting Example:")
+    val highEarningStaff = hospital.getAllStaff().filter { it.salary > 5000 }.sortedByDescending { it.salary }
+    highEarningStaff.forEach { println("${it.name} earns $$${it.salary}") }
+
+    println("\nGrouping Example:")
+    val groupedStaff = hospital.getAllStaff().groupBy { it.salary > 5000 }
+    groupedStaff.forEach { (isHighEarner, staffList) ->
+        println(if (isHighEarner) "High earners:" else "Low earners:")
+        staffList.forEach { println(it.introduce()) }
+    }
 }
